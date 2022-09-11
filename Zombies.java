@@ -7,12 +7,9 @@ public class Zombies {
             return a;
         return calculateGCD(b, a % b);
     }
-    static boolean checkCoPrime(int a, int b) {
-        return calculateGCD(a, b) == 1;
-    }
     static int findPerfectCityIndex(ArrayList<Integer> list, int n) {
         for (int i = 0; i < n - 1; i++) {
-            if (checkCoPrime(list.get(i), list.get(i+1)) && list.get(i) > list.get(i+1))
+            if (calculateGCD(list.get(i), list.get(i+1)) == 1 && list.get(i) > list.get(i+1))
                 return i; //return index if ith and (i+1)th element are co prime and list[i] > list[i+1]
         }
         return 0; //else return 0
